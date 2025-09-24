@@ -5,7 +5,9 @@ export default {
     extend: {
       colors: {
         brandNavy: '#040458',
+        brandNavySoft: '#0b0f7a',
         brandOrange: '#FAA51A',
+        brandTeal: '#2dd4bf',
       },
     },
   },

@@ -16,13 +16,19 @@ const Header = () => {
   const navItems = [
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
+    { label: 'Media', href: '#media' },
+    { label: 'Company Profile', href: '#profile-gallery' },
+    { label: 'Board', href: '#board' },
+    { label: 'Management', href: '#management' },
+    { label: 'Partners', href: '#partners' },
+    { label: 'Endorsements', href: '#endorsements' },
     { label: 'Focus Areas', href: '#focus' },
     { label: 'Achievements', href: '#achievements' },
     { label: 'Contact', href: '#contact' },
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-brandNavy border-b border-white/10`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-brandNavy/80 backdrop-blur-md' : 'bg-transparent'} border-b border-white/10`}>
       <nav className="container mx-auto px-6 py-3 h-16 flex items-center">
         <div className="flex items-center justify-between w-full">
           <a href="#home" className="flex items-center gap-3">

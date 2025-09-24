@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import FocusAreas from './components/FocusAreas';
+import CompanyProfile from './components/CompanyProfile';
 import MediaShowcase from './components/MediaShowcase';
 import HolographicDisplay from './components/HolographicDisplay';
 import AIAgents from './components/AIAgents';
@@ -25,6 +26,7 @@ function App() {
       <About />
       <MediaShowcase />
       <FocusAreas />
+      <CompanyProfile />
       <HolographicDisplay />
       <AIAgents />
       <Achievements />

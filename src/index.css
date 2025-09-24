@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* App background and subtle texture */
+body {
+  @apply bg-brandNavy text-white;
+  background-image:
+    radial-gradient(1000px 500px at 70% -10%, rgba(250,165,26,0.10), transparent 60%),
+    linear-gradient(180deg, rgba(4,4,88,0.6), rgba(4,4,88,0.9));
+}
+
+.frosted {
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
+}
+
+.section-title {
+  @apply text-4xl md:text-5xl font-bold text-white;
+}
+
+.subtext {
+  @apply text-xl text-gray-300;
+}

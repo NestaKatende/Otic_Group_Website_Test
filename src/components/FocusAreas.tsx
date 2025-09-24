@@ -11,7 +11,8 @@ import {
   Shield,
   TrendingUp,
   DollarSign,
-  FileText
+  FileText,
+  ExternalLink
 } from 'lucide-react';
 
 const FocusAreas = () => {
@@ -22,6 +23,11 @@ const FocusAreas = () => {
       description: 'The innovation engine delivering AI training solutions and outsourcing services',
       icon: Building,
       color: 'from-teal-500 to-blue-600',
+      websiteUrl: 'https://otictech.com',
+      products: [
+        { name: 'Otic Business', url: 'https://oticbusiness.com' },
+        { name: 'Otic Learn', url: 'https://oticlearn.com' }
+      ],
       services: [
         {
           title: 'Corporate AI Consultancy & Training',
@@ -46,6 +52,7 @@ const FocusAreas = () => {
       description: 'Community-focused arm championing grassroots AI advocacy and digital inclusion',
       icon: Heart,
       color: 'from-purple-500 to-pink-600',
+      websiteUrl: 'https://oticfoundation.org/',
       services: [
         {
           title: 'National Free AI Skilling Initiative (NFASI)',
@@ -70,6 +77,7 @@ const FocusAreas = () => {
       description: 'Advanced learning and research center in AI, data science, and frontier tech',
       icon: GraduationCap,
       color: 'from-blue-500 to-purple-600',
+      websiteUrl: 'http://oiet.ac.ug/',
       services: [
         {
           title: 'Finance & Risk',
@@ -152,6 +160,33 @@ const FocusAreas = () => {
                   <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                     {division.description}
                   </p>
+
+                  {/* Links row if available */}
+                  <div className="flex flex-wrap gap-3">
+                    {division.websiteUrl && (
+                      <a
+                        href={division.websiteUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-4 py-2 rounded-full transition-colors"
+                      >
+                        Visit Website
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    )}
+                    {division.products && division.products.map((p, i) => (
+                      <a
+                        key={i}
+                        href={p.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-4 py-2 rounded-full transition-colors"
+                      >
+                        {p.name}
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    ))}
+                  </div>
                 </div>
 
                 <div className="lg:w-1/2">

@@ -27,14 +27,26 @@ const Hero = () => {
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
           className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { staggerChildren: 0.08 } }
+          }}
         >
-          Building Africa's
+          {"Building Africa's".split("").map((ch, i) => (
+            <motion.span key={`h1a-${i}`} initial={{ y: 40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5 }}>
+              {ch === ' ' ? '\u00A0' : ch}
+            </motion.span>
+          ))}
+          <br />
           <span className="block bg-gradient-to-r from-brandOrange to-yellow-400 bg-clip-text text-transparent">
-            AI Future
+            {"AI Future".split("").map((ch, i) => (
+              <motion.span key={`h1b-${i}`} initial={{ y: 40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }}>
+                {ch === ' ' ? '\u00A0' : ch}
+              </motion.span>
+            ))}
           </span>
         </motion.h1>
 
@@ -42,7 +54,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
+          className="text-xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed"
         >
           We are a diversified AI powerhouse accelerating Africa's digital transformation, 
           building a globally competitive, inclusive AI ecosystem from Uganda for the African continent.
@@ -54,22 +66,24 @@ const Hero = () => {
           transition={{ delay: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16"
         >
-          <motion.button
+          <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            href="#contact"
             className="group bg-brandOrange hover:brightness-110 text-white px-8 py-4 rounded-full transition-all duration-300 transform hover:shadow-2xl hover:shadow-brandOrange/25 flex items-center space-x-2"
           >
             <span className="font-semibold">Get Started</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-          </motion.button>
+          </motion.a>
           
-          <motion.button
+          <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            href="#about"
             className="border border-white/30 hover:border-brandOrange text-white px-8 py-4 rounded-full transition-all duration-300 hover:bg-white/10 backdrop-blur-sm"
           >
             Learn More
-          </motion.button>
+          </motion.a>
         </motion.div>
 
         {/* Stats */}
