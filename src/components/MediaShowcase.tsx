@@ -7,47 +7,12 @@ const MediaShowcase = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
 
-  const mediaContent = [
-    {
-      type: 'video',
-      title: 'AI Training in Action',
-      description: 'Watch our immersive AI training sessions transforming African talent',
-      thumbnail: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800',
-      videoUrl: 'https://player.vimeo.com/video/76979871?autoplay=1&loop=1&muted=1'
-    },
-    {
-      type: 'video',
-      title: 'Corporate AI Solutions',
-      description: 'Discover how we help businesses integrate AI into their operations',
-      thumbnail: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800',
-      videoUrl: 'https://player.vimeo.com/video/76979871?autoplay=1&loop=1&muted=1'
-    },
-    {
-      type: 'image',
-      title: 'AI Community Events',
-      description: 'Our vibrant community of 15,000+ AI enthusiasts across Africa',
-      thumbnail: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
-    {
-      type: 'image',
-      title: 'Government Partnership',
-      description: 'Official endorsement ceremony with Uganda Ministry of ICT',
-      thumbnail: 'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
-    {
-      type: 'video',
-      title: 'Rwanda Expansion',
-      description: 'Our strategic expansion into Rwanda and across Africa',
-      thumbnail: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800',
-      videoUrl: 'https://player.vimeo.com/video/76979871?autoplay=1&loop=1&muted=1'
-    },
-    {
-      type: 'image',
-      title: 'AI Research Lab',
-      description: 'State-of-the-art facilities at Otic Institute of Emerging Technologies',
-      thumbnail: 'https://images.pexels.com/photos/3861458/pexels-photo-3861458.jpeg?auto=compress&cs=tinysrgb&w=800'
-    }
-  ];
+  const mediaContent = Array.from({ length: 6 }).map((_, i) => ({
+    type: 'image' as const,
+    title: `Company Profile Slide ${i + 1}`,
+    description: 'From Otic Group profile',
+    thumbnail: `/profile/images/slide-0${i + 1}.jpg`
+  }));
 
   const togglePlay = () => {
     setIsPlaying(!isPlaying);

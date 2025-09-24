@@ -10,8 +10,12 @@ const About = () => {
             About <span className="text-brandOrange">Us</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            We bring together Otic Technologies, Otic Foundation, Otic Rwanda, and Otic Institute 
-            of Emerging Technologies working as one to build a globally competitive, inclusive AI ecosystem.
+            Otic Group is a diversified AI powerhouse accelerating Africa's digital transformation.
+            We bring together <span className="text-white font-semibold">Otic Technologies</span>,
+            <span className="text-white font-semibold"> Otic Foundation</span>,
+            <span className="text-white font-semibold"> Otic Rwanda</span>, and the
+            <span className="text-white font-semibold"> Otic Institute of Emerging Technologies (OIET)</span>
+            working as one to build a globally competitive, inclusive AI ecosystem from Uganda for the African continent.
           </p>
         </div>
 
@@ -44,11 +48,11 @@ const About = () => {
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4">
                     <div className="w-3 h-3 bg-brandOrange rounded-full"></div>
-                    <span className="text-gray-300">Government of Uganda endorsement as AI implementor</span>
+                    <span className="text-gray-300">Government of Uganda endorsement as AI implementer</span>
                   </div>
                   <div className="flex items-center space-x-4">
                     <div className="w-3 h-3 bg-brandOrange rounded-full"></div>
-                    <span className="text-gray-300">Successful expansion to Rwanda</span>
+                    <span className="text-gray-300">Successful expansion into Rwanda</span>
                   </div>
                   <div className="flex items-center space-x-4">
                     <div className="w-3 h-3 bg-brandOrange rounded-full"></div>
