@@ -69,6 +69,9 @@ const AIAgents = () => {
     setIsRunning(!isRunning);
   };
 
+  const activeAgentData = agents[activeAgent];
+  const ActiveAgentIcon = activeAgentData.icon;
+
   return (
     <section className="py-20 bg-slate-900 relative overflow-hidden">
       {/* Background Effects */}
@@ -134,8 +137,9 @@ const AIAgents = () => {
               }`}
               onClick={() => setActiveAgent(index)}
             >
+              {(() => { const AgentIcon = agent.icon; return (
               <div className={`w-12 h-12 bg-gradient-to-r ${agent.color} rounded-xl flex items-center justify-center mb-4 relative`}>
-                <agent.icon className="w-6 h-6 text-white" />
+                <AgentIcon className="w-6 h-6 text-white" />
                 {isRunning && (
                   <motion.div
                     className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full"
@@ -144,6 +148,7 @@ const AIAgents = () => {
                   />
                 )}
               </div>
+              ); })()}
 
               <h3 className="text-lg font-bold text-white mb-2">{agent.name}</h3>
               <p className="text-sm text-gray-400 mb-4">{agent.description}</p>
@@ -182,19 +187,19 @@ const AIAgents = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <div className="flex items-center space-x-4 mb-6">
-                <div className={`w-16 h-16 bg-gradient-to-r ${agents[activeAgent].color} rounded-2xl flex items-center justify-center`}>
-                  <agents[activeAgent].icon className="w-8 h-8 text-white" />
+                <div className={`w-16 h-16 bg-gradient-to-r ${activeAgentData.color} rounded-2xl flex items-center justify-center`}>
+                  <ActiveAgentIcon className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white">{agents[activeAgent].name}</h3>
-                  <p className="text-gray-400">{agents[activeAgent].description}</p>
+                  <h3 className="text-2xl font-bold text-white">{activeAgentData.name}</h3>
+                  <p className="text-gray-400">{activeAgentData.description}</p>
                 </div>
               </div>
 
               <div className="space-y-4">
                 <h4 className="text-lg font-semibold text-white">Core Capabilities</h4>
                 <div className="grid gap-3">
-                  {agents[activeAgent].capabilities.map((capability, index) => (
+                  {activeAgentData.capabilities.map((capability, index) => (
                     <div key={index} className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-teal-400 rounded-full"></div>
                       <span className="text-gray-300">{capability}</span>
@@ -242,13 +247,13 @@ const AIAgents = () => {
                   <div>
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-sm text-gray-400">Success Rate</span>
-                      <span className="text-sm text-white">{isRunning ? agents[activeAgent].accuracy : 0}%</span>
+                      <span className="text-sm text-white">{isRunning ? activeAgentData.accuracy : 0}%</span>
                     </div>
                     <div className="w-full bg-slate-700 rounded-full h-2">
                       <motion.div
                         className="bg-gradient-to-r from-green-400 to-teal-500 h-2 rounded-full"
                         initial={{ width: 0 }}
-                        animate={{ width: isRunning ? `${agents[activeAgent].accuracy}%` : '0%' }}
+                      animate={{ width: isRunning ? `${activeAgentData.accuracy}%` : '0%' }}
                         transition={{ duration: 1, delay: 0.4 }}
                       />
                     </div>

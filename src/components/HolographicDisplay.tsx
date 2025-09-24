@@ -34,6 +34,9 @@ const HolographicDisplay = () => {
     return () => clearInterval(interval);
   }, [isAnimating, nodes.length]);
 
+  const activeNodeData = nodes[activeNode];
+  const ActiveNodeIcon = activeNodeData.icon;
+
   return (
     <section className="py-20 bg-slate-900 relative overflow-hidden">
       {/* Background Effects */}
@@ -143,10 +146,12 @@ const HolographicDisplay = () => {
                   } : {}}
                   transition={{ duration: 2, repeat: activeNode === index ? Infinity : 0 }}
                 >
-                  <node.icon 
+                  {(() => { const NodeIcon = node.icon; return (
+                  <NodeIcon 
                     className="w-8 h-8" 
                     style={{ color: activeNode === index ? node.color : '#9CA3AF' }}
                   />
+                  ); })()}
                   
                   {/* Pulse Effect */}
                   {activeNode === index && (
@@ -191,15 +196,15 @@ const HolographicDisplay = () => {
               <div className="flex items-center space-x-4 mb-6">
                 <div 
                   className="w-16 h-16 rounded-2xl flex items-center justify-center"
-                  style={{ backgroundColor: `${nodes[activeNode].color}20` }}
+                  style={{ backgroundColor: `${activeNodeData.color}20` }}
                 >
-                  <nodes[activeNode].icon 
+                  <ActiveNodeIcon 
                     className="w-8 h-8" 
-                    style={{ color: nodes[activeNode].color }}
+                    style={{ color: activeNodeData.color }}
                   />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white">{nodes[activeNode].label}</h3>
+                  <h3 className="text-2xl font-bold text-white">{activeNodeData.label}</h3>
                   <p className="text-gray-400">AI System Component</p>
                 </div>
               </div>
@@ -221,7 +226,7 @@ const HolographicDisplay = () => {
                   <div className="w-full bg-slate-700 rounded-full h-2">
                     <motion.div
                       className="h-2 rounded-full"
-                      style={{ backgroundColor: nodes[activeNode].color }}
+                      style={{ backgroundColor: activeNodeData.color }}
                       initial={{ width: 0 }}
                       animate={{ width: '85%' }}
                       transition={{ duration: 1 }}
