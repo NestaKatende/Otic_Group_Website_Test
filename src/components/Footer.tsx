@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 py-12">
         <div className="flex flex-col items-center justify-between space-y-8">
           <div className="flex items-center">
-            <img src="/Otic.png" alt="" className="h-16 w-auto object-contain block" loading="eager" />
+            <img src="/Otic Group logo white .png" alt="OTIC Group" className="h-16 w-auto object-contain block" loading="eager" />
           </div>
 
           <div className="text-center">

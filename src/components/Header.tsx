@@ -24,10 +24,10 @@ const Header = () => {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-brandNavy border-b border-white/10`}>
       <nav className="container mx-auto px-6 py-3 h-16 flex items-center">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center">
-            <img src="/Otic.png" alt="" className="h-12 w-auto object-contain block" loading="eager" />
-          </div>
+        <div className="flex items-center justify-between w-full">
+          <a href="#home" className="flex items-center gap-3">
+            <img src="/Otic Group logo white .png" alt="OTIC Group" className="h-10 md:h-12 w-auto object-contain block drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)]" loading="eager" />
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
