@@ -33,12 +33,12 @@ const AIAssistant = () => {
 
   const aiResponses = {
     greeting: [
-      "Hello! Welcome to Otic Group. How can I assist you with our AI solutions today?",
+      "Hello! How can I assist you with our AI solutions today?",
       "Hi there! I'm here to help you explore our AI training programs and services.",
-      "Greetings! Ready to discover how Otic Group is revolutionizing AI in Africa?"
+      "Greetings! Ready to discover how we are revolutionizing AI in Africa?"
     ],
     services: [
-      "Otic Group offers comprehensive AI solutions through four divisions: Otic Technologies (corporate training & outsourcing), Otic Foundation (community programs), OIET (professional certifications), and Otic Rwanda (regional expansion). Which area interests you most?",
+      "We offer comprehensive AI solutions through four divisions: Otic Technologies (corporate training & outsourcing), Otic Foundation (community programs), OIET (professional certifications), and Otic Rwanda (regional expansion). Which area interests you most?",
       "We provide AI consultancy, training, business process outsourcing, and professional certifications. Our programs have trained over 5,500 learners across Uganda and Rwanda!"
     ],
     training: [
@@ -50,7 +50,7 @@ const AIAssistant = () => {
       "Our team is ready to help! Contact us via phone (+256 756 722 263), email (info@oticgroup.net), or through our website. We serve clients across Uganda and Rwanda."
     ],
     default: [
-      "That's an interesting question! Otic Group is Africa's leading AI powerhouse with government endorsement and over 15,000 community members. Could you be more specific about what you'd like to know?",
+      "That's an interesting question! We're Africa's leading AI powerhouse with government endorsement and over 15,000 community members. Could you be more specific about what you'd like to know?",
       "I'd be happy to help! We specialize in AI training, consultancy, and building Africa's AI ecosystem. What specific aspect of our work interests you?",
       "Great question! As Africa's premier AI company, we're transforming the continent through education, innovation, and practical AI solutions. How can I assist you further?"
     ]
@@ -118,7 +118,7 @@ const AIAssistant = () => {
       {/* Chat Button */}
       <motion.button
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom-6 right-6 z-50 ${isOpen ? 'hidden' : 'flex'} items-center justify-center w-16 h-16 bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-400 hover:to-blue-500 text-white rounded-full shadow-2xl hover:shadow-teal-500/25 transition-all duration-300`}
+        className={`fixed bottom-6 right-6 z-50 ${isOpen ? 'hidden' : 'flex'} items-center justify-center w-16 h-16 bg-brandOrange text-white rounded-full shadow-2xl hover:brightness-110 transition-all duration-300`}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         animate={{
@@ -150,7 +150,7 @@ const AIAssistant = () => {
             className="fixed bottom-6 right-6 z-50 w-96 h-[500px] bg-slate-900/95 backdrop-blur-xl border border-slate-700/50 rounded-2xl shadow-2xl overflow-hidden"
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-teal-500 to-blue-600 p-4 flex items-center justify-between">
+            <div className="bg-brandOrange p-4 flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
                   <Bot className="w-6 h-6 text-white" />
@@ -180,8 +180,8 @@ const AIAssistant = () => {
                   <div className={`flex items-start space-x-2 max-w-[80%] ${message.sender === 'user' ? 'flex-row-reverse space-x-reverse' : ''}`}>
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
                       message.sender === 'user' 
-                        ? 'bg-blue-500' 
-                        : 'bg-gradient-to-r from-teal-500 to-blue-600'
+                        ? 'bg-brandOrange' 
+                        : 'bg-brandOrange'
                     }`}>
                       {message.sender === 'user' ? (
                         <User className="w-4 h-4 text-white" />
@@ -191,7 +191,7 @@ const AIAssistant = () => {
                     </div>
                     <div className={`p-3 rounded-2xl ${
                       message.sender === 'user'
-                        ? 'bg-blue-500 text-white'
+                        ? 'bg-brandOrange text-white'
                         : 'bg-slate-800 text-gray-100 border border-slate-700'
                     }`}>
                       <p className="text-sm">{message.text}</p>
@@ -207,23 +207,23 @@ const AIAssistant = () => {
                   className="flex justify-start"
                 >
                   <div className="flex items-start space-x-2">
-                    <div className="w-8 h-8 bg-gradient-to-r from-teal-500 to-blue-600 rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-brandOrange rounded-full flex items-center justify-center">
                       <Bot className="w-4 h-4 text-white" />
                     </div>
                     <div className="bg-slate-800 border border-slate-700 p-3 rounded-2xl">
                       <div className="flex space-x-1">
                         <motion.div
-                          className="w-2 h-2 bg-teal-400 rounded-full"
+                          className="w-2 h-2 bg-brandOrange rounded-full"
                           animate={{ scale: [1, 1.5, 1] }}
                           transition={{ duration: 0.6, repeat: Infinity, delay: 0 }}
                         />
                         <motion.div
-                          className="w-2 h-2 bg-teal-400 rounded-full"
+                          className="w-2 h-2 bg-brandOrange rounded-full"
                           animate={{ scale: [1, 1.5, 1] }}
                           transition={{ duration: 0.6, repeat: Infinity, delay: 0.2 }}
                         />
                         <motion.div
-                          className="w-2 h-2 bg-teal-400 rounded-full"
+                          className="w-2 h-2 bg-brandOrange rounded-full"
                           animate={{ scale: [1, 1.5, 1] }}
                           transition={{ duration: 0.6, repeat: Infinity, delay: 0.4 }}
                         />
@@ -243,13 +243,13 @@ const AIAssistant = () => {
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  placeholder="Ask me about Otic Group..."
+                  placeholder="Ask me about our work..."
                   className="flex-1 bg-slate-800 border border-slate-600 rounded-xl px-4 py-2 text-white placeholder-gray-400 focus:border-teal-400 focus:outline-none transition-colors duration-300"
                 />
                 <button
                   onClick={handleSendMessage}
                   disabled={!inputText.trim()}
-                  className="bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-400 hover:to-blue-500 disabled:opacity-50 disabled:cursor-not-allowed text-white p-2 rounded-xl transition-all duration-300"
+                  className="bg-brandOrange hover:brightness-110 disabled:opacity-50 disabled:cursor-not-allowed text-white p-2 rounded-xl transition-all duration-300"
                 >
                   <Send className="w-5 h-5" />
                 </button>

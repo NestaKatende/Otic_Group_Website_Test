@@ -7,17 +7,11 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-slate-950 border-t border-slate-800">
+    <footer className="bg-brandNavy border-t border-white/10">
       <div className="container mx-auto px-6 py-12">
         <div className="flex flex-col items-center justify-between space-y-8">
-          <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-teal-400 to-blue-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">O</span>
-            </div>
-            <div>
-              <h1 className="text-2xl font-bold text-white">Otic Group</h1>
-              <p className="text-sm text-teal-300">Accelerating Africa's AI Revolution</p>
-            </div>
+          <div className="flex items-center">
+            <img src="/Otic.png" alt="" className="h-16 w-auto object-contain block" loading="eager" />
           </div>
 
           <div className="text-center">
@@ -35,16 +29,16 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-between w-full pt-8 border-t border-slate-800">
+          <div className="flex items-center justify-between w-full pt-8 border-t border-white/10">
             <p className="text-gray-500 text-sm">
               © 2025 Otic Group. All rights reserved.
             </p>
             
             <button
               onClick={scrollToTop}
-              className="p-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-full transition-all duration-300 hover:scale-110 group"
+              className="p-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full transition-all duration-300 hover:scale-110 group"
             >
-              <ArrowUp className="w-5 h-5 text-gray-400 group-hover:text-teal-400 transition-colors duration-300" />
+              <ArrowUp className="w-5 h-5 text-gray-300 group-hover:text-brandOrange transition-colors duration-300" />
             </button>
           </div>
         </div>

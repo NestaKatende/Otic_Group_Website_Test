@@ -18,7 +18,7 @@ function App() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-slate-900 text-white relative"
+      className="min-h-screen bg-brandNavy text-white relative"
     >
       <Header />
       <Hero />

@@ -22,19 +22,11 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-slate-900/90 backdrop-blur-md border-b border-slate-700/50' : 'bg-transparent'
-    }`}>
-      <nav className="container mx-auto px-6 py-4">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-brandNavy border-b border-white/10`}>
+      <nav className="container mx-auto px-6 py-3 h-16 flex items-center">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-teal-400 to-blue-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">O</span>
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-white">Otic Group</h1>
-              <p className="text-xs text-teal-300">AI Revolution</p>
-            </div>
+          <div className="flex items-center">
+            <img src="/Otic.png" alt="" className="h-12 w-auto object-contain block" loading="eager" />
           </div>
 
           {/* Desktop Navigation */}
@@ -43,10 +35,10 @@ const Header = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-gray-300 hover:text-teal-300 transition-colors duration-300 relative group"
+                className="text-gray-200 hover:text-brandOrange transition-colors duration-300 relative group"
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-400 to-blue-500 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brandOrange group-hover:w-full transition-all duration-300"></span>
               </a>
             ))}
           </div>
@@ -62,12 +54,12 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 py-4 border-t border-slate-700/50">
+          <div className="md:hidden mt-4 py-4 border-t border-brandOrange/30">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="block py-2 text-gray-300 hover:text-teal-300 transition-colors duration-300"
+                className="block py-2 text-gray-200 hover:text-brandOrange transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}

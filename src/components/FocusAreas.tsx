@@ -124,11 +124,11 @@ const FocusAreas = () => {
   ];
 
   return (
-    <section id="focus" className="py-20 bg-slate-900">
+    <section id="focus" className="py-20 bg-brandNavy">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Our <span className="bg-gradient-to-r from-teal-400 to-purple-500 bg-clip-text text-transparent">Focus Areas</span>
+            Our <span className="text-brandOrange">Focus Areas</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Four specialized divisions working together to transform Africa's AI landscape
@@ -140,7 +140,7 @@ const FocusAreas = () => {
             <div key={division.id} className="relative">
               <div className={`flex flex-col lg:flex-row items-center gap-12 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                 <div className="lg:w-1/2">
-                  <div className={`inline-flex items-center space-x-3 bg-gradient-to-r ${division.color} p-1 rounded-2xl mb-6`}>
+                  <div className={`inline-flex items-center space-x-3 bg-brandOrange/20 p-1 rounded-2xl mb-6`}>
                     <div className="bg-white/10 backdrop-blur-sm p-3 rounded-xl">
                       <division.icon className="w-8 h-8 text-white" />
                     </div>
@@ -157,14 +157,14 @@ const FocusAreas = () => {
                 <div className="lg:w-1/2">
                   <div className="grid gap-6">
                     {division.services.map((service, serviceIndex) => (
-                      <div key={serviceIndex} className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 hover:border-slate-600/50 transition-all duration-300 group">
-                        <h4 className="text-xl font-bold text-white mb-3 group-hover:text-teal-300 transition-colors duration-300">
+                      <div key={serviceIndex} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-brandOrange/50 transition-all duration-300 group">
+                        <h4 className="text-xl font-bold text-white mb-3 group-hover:text-brandOrange transition-colors duration-300">
                           {service.title}
                         </h4>
                         <p className="text-gray-300 mb-4">{service.description}</p>
                         <div className="flex flex-wrap gap-2">
                           {service.features.map((feature, featureIndex) => (
-                            <span key={featureIndex} className="text-xs bg-slate-700/50 text-gray-300 px-3 py-1 rounded-full border border-slate-600/30">
+                            <span key={featureIndex} className="text-xs bg-white/10 text-gray-300 px-3 py-1 rounded-full border border-white/20">
                               {feature}
                             </span>
                           ))}
@@ -179,10 +179,10 @@ const FocusAreas = () => {
         </div>
 
         {/* OIET Certificates Section */}
-        <div className="mt-20 pt-20 border-t border-slate-700/50">
+        <div className="mt-20 pt-20 border-t border-white/10">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-white mb-4">
-              Professional <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">Certifications</span>
+              Professional <span className="text-brandOrange">Certifications</span>
             </h3>
             <p className="text-gray-300 max-w-2xl mx-auto">
               Industry-specific AI certifications designed for the future of work across various sectors
@@ -191,8 +191,8 @@ const FocusAreas = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {certificates.map((cert, index) => (
-              <div key={index} className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6 hover:border-teal-500/50 transition-all duration-300 group hover:scale-105">
-                <cert.icon className="w-10 h-10 text-teal-400 mb-4 group-hover:scale-110 transition-transform duration-300" />
+              <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-brandOrange/50 transition-all duration-300 group hover:scale-105">
+                <cert.icon className="w-10 h-10 text-brandOrange mb-4 group-hover:scale-110 transition-transform duration-300" />
                 <h4 className="text-lg font-bold text-white mb-2">{cert.name}</h4>
                 <p className="text-sm text-gray-400">{cert.description}</p>
               </div>

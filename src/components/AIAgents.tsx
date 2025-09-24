@@ -73,11 +73,11 @@ const AIAgents = () => {
   const ActiveAgentIcon = activeAgentData.icon;
 
   return (
-    <section className="py-20 bg-slate-900 relative overflow-hidden">
+    <section className="py-20 bg-brandNavy relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brandOrange/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brandOrange/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -85,14 +85,14 @@ const AIAgents = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center space-x-2 bg-slate-800/50 backdrop-blur-sm rounded-full px-6 py-2 border border-teal-500/20 mb-6"
+            className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm rounded-full px-6 py-2 border border-brandOrange/30 mb-6"
           >
-            <Network className="w-4 h-4 text-teal-400" />
+            <Network className="w-4 h-4 text-brandOrange" />
             <span className="text-sm text-gray-300">Agentic AI Systems</span>
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Intelligent <span className="bg-gradient-to-r from-teal-400 to-purple-500 bg-clip-text text-transparent">AI Agents</span>
+            Intelligent <span className="text-brandOrange">AI Agents</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
             Experience our autonomous AI agents working in real-time to solve complex business challenges
@@ -104,18 +104,18 @@ const AIAgents = () => {
               onClick={toggleAgentSystem}
               className={`flex items-center space-x-2 px-6 py-3 rounded-xl transition-all duration-300 ${
                 isRunning 
-                  ? 'bg-red-500/20 border border-red-500/50 text-red-400 hover:bg-red-500/30' 
-                  : 'bg-green-500/20 border border-green-500/50 text-green-400 hover:bg-green-500/30'
+                  ? 'bg-white/10 border border-white/20 text-white/80 hover:bg-white/20' 
+                  : 'bg-brandOrange/20 border border-brandOrange/50 text-brandOrange hover:bg-brandOrange/30'
               }`}
             >
               {isRunning ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
               <span>{isRunning ? 'Pause System' : 'Start System'}</span>
             </button>
             
-            <div className="flex items-center space-x-2 bg-slate-800/50 backdrop-blur-sm rounded-xl px-4 py-3 border border-slate-700/50">
-              <Activity className={`w-5 h-5 ${isRunning ? 'text-green-400 animate-pulse' : 'text-gray-400'}`} />
+            <div className="flex items-center space-x-2 bg-white/5 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/10">
+              <Activity className={`w-5 h-5 ${isRunning ? 'text-brandOrange animate-pulse' : 'text-gray-400'}`} />
               <span className="text-gray-300">System Status: </span>
-              <span className={isRunning ? 'text-green-400' : 'text-gray-400'}>
+              <span className={isRunning ? 'text-brandOrange' : 'text-gray-400'}>
                 {isRunning ? 'Active' : 'Standby'}
               </span>
             </div>
@@ -130,19 +130,19 @@ const AIAgents = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className={`bg-slate-800/50 backdrop-blur-sm border rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:scale-105 ${
+              className={`bg-white/5 backdrop-blur-sm border rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:scale-105 ${
                 activeAgent === index 
-                  ? 'border-teal-500/50 shadow-2xl shadow-teal-500/10' 
-                  : 'border-slate-700/50 hover:border-slate-600/50'
+                  ? 'border-brandOrange/50 shadow-2xl shadow-brandOrange/10' 
+                  : 'border-white/10 hover:border-white/20'
               }`}
               onClick={() => setActiveAgent(index)}
             >
               {(() => { const AgentIcon = agent.icon; return (
-              <div className={`w-12 h-12 bg-gradient-to-r ${agent.color} rounded-xl flex items-center justify-center mb-4 relative`}>
+              <div className={`w-12 h-12 bg-brandOrange/20 rounded-xl flex items-center justify-center mb-4 relative`}>
                 <AgentIcon className="w-6 h-6 text-white" />
                 {isRunning && (
                   <motion.div
-                    className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full"
+                    className="absolute -top-1 -right-1 w-3 h-3 bg-brandOrange rounded-full"
                     animate={{ scale: [1, 1.2, 1] }}
                     transition={{ duration: 1, repeat: Infinity }}
                   />
@@ -157,7 +157,7 @@ const AIAgents = () => {
                 <div className="flex justify-between items-center">
                   <span className="text-xs text-gray-500">Status</span>
                   <span className={`text-xs px-2 py-1 rounded-full ${
-                    isRunning ? 'bg-green-500/20 text-green-400' : 'bg-gray-500/20 text-gray-400'
+                    isRunning ? 'bg-brandOrange/20 text-brandOrange' : 'bg-gray-500/20 text-gray-400'
                   }`}>
                     {isRunning ? agent.status : 'Standby'}
                   </span>
@@ -170,7 +170,7 @@ const AIAgents = () => {
                 
                 <div className="flex justify-between items-center">
                   <span className="text-xs text-gray-500">Accuracy</span>
-                  <span className="text-xs text-teal-400">{isRunning ? agent.accuracy : 0}%</span>
+                  <span className="text-xs text-brandOrange">{isRunning ? agent.accuracy : 0}%</span>
                 </div>
               </div>
             </motion.div>
@@ -187,7 +187,7 @@ const AIAgents = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <div className="flex items-center space-x-4 mb-6">
-                <div className={`w-16 h-16 bg-gradient-to-r ${activeAgentData.color} rounded-2xl flex items-center justify-center`}>
+                <div className={`w-16 h-16 bg-brandOrange/20 rounded-2xl flex items-center justify-center`}>
                   <ActiveAgentIcon className="w-8 h-8 text-white" />
                 </div>
                 <div>
@@ -251,7 +251,7 @@ const AIAgents = () => {
                     </div>
                     <div className="w-full bg-slate-700 rounded-full h-2">
                       <motion.div
-                        className="bg-gradient-to-r from-green-400 to-teal-500 h-2 rounded-full"
+                      className="bg-brandOrange h-2 rounded-full"
                         initial={{ width: 0 }}
                       animate={{ width: isRunning ? `${activeAgentData.accuracy}%` : '0%' }}
                         transition={{ duration: 1, delay: 0.4 }}

@@ -7,11 +7,11 @@ const HolographicDisplay = () => {
   const [isAnimating, setIsAnimating] = useState(true);
 
   const nodes = [
-    { id: 'brain', icon: Brain, label: 'Neural Networks', color: '#14B8A6', position: { x: 50, y: 20 } },
-    { id: 'cpu', icon: Cpu, label: 'Processing Units', color: '#3B82F6', position: { x: 80, y: 40 } },
-    { id: 'database', icon: Database, label: 'Data Storage', color: '#8B5CF6', position: { x: 70, y: 70 } },
-    { id: 'network', icon: Network, label: 'AI Networks', color: '#F59E0B', position: { x: 30, y: 60 } },
-    { id: 'zap', icon: Zap, label: 'Power Systems', color: '#EF4444', position: { x: 20, y: 30 } },
+    { id: 'brain', icon: Brain, label: 'Neural Networks', color: '#FAA51A', position: { x: 50, y: 20 } },
+    { id: 'cpu', icon: Cpu, label: 'Processing Units', color: '#FAA51A', position: { x: 80, y: 40 } },
+    { id: 'database', icon: Database, label: 'Data Storage', color: '#FAA51A', position: { x: 70, y: 70 } },
+    { id: 'network', icon: Network, label: 'AI Networks', color: '#FAA51A', position: { x: 30, y: 60 } },
+    { id: 'zap', icon: Zap, label: 'Power Systems', color: '#FAA51A', position: { x: 20, y: 30 } },
   ];
 
   const connections = [
@@ -38,11 +38,11 @@ const HolographicDisplay = () => {
   const ActiveNodeIcon = activeNodeData.icon;
 
   return (
-    <section className="py-20 bg-slate-900 relative overflow-hidden">
+    <section className="py-20 bg-brandNavy relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brandOrange/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brandOrange/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -50,14 +50,14 @@ const HolographicDisplay = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center space-x-2 bg-slate-800/50 backdrop-blur-sm rounded-full px-6 py-2 border border-teal-500/20 mb-6"
+            className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm rounded-full px-6 py-2 border border-brandOrange/30 mb-6"
           >
-            <Activity className="w-4 h-4 text-teal-400" />
+            <Activity className="w-4 h-4 text-brandOrange" />
             <span className="text-sm text-gray-300">AI Architecture Visualization</span>
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Holographic <span className="bg-gradient-to-r from-teal-400 to-purple-500 bg-clip-text text-transparent">AI Systems</span>
+            Holographic <span className="text-brandOrange">AI Systems</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
             Experience our advanced AI architecture through interactive holographic visualization
@@ -68,8 +68,8 @@ const HolographicDisplay = () => {
               onClick={() => setIsAnimating(!isAnimating)}
               className={`px-6 py-3 rounded-xl transition-all duration-300 ${
                 isAnimating 
-                  ? 'bg-red-500/20 border border-red-500/50 text-red-400 hover:bg-red-500/30' 
-                  : 'bg-green-500/20 border border-green-500/50 text-green-400 hover:bg-green-500/30'
+                  ? 'bg-white/10 border border-white/20 text-white/80 hover:bg-white/20' 
+                  : 'bg-brandOrange/20 border border-brandOrange/50 text-brandOrange hover:bg-brandOrange/30'
               }`}
             >
               {isAnimating ? 'Pause Animation' : 'Start Animation'}
@@ -80,13 +80,13 @@ const HolographicDisplay = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Holographic Display */}
           <div className="relative">
-            <div className="aspect-square bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 relative overflow-hidden">
+            <div className="aspect-square bg-white/5 backdrop-blur-sm border border-white/20 rounded-3xl p-8 relative overflow-hidden">
               {/* Holographic Grid */}
               <div className="absolute inset-0 opacity-20">
                 <svg className="w-full h-full" viewBox="0 0 400 400">
                   <defs>
                     <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#14B8A6" strokeWidth="0.5"/>
+                      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#FAA51A" strokeWidth="0.5"/>
                     </pattern>
                   </defs>
                   <rect width="100%" height="100%" fill="url(#grid)" />
@@ -116,8 +116,8 @@ const HolographicDisplay = () => {
                 })}
                 <defs>
                   <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#14B8A6" />
-                    <stop offset="100%" stopColor="#8B5CF6" />
+                    <stop offset="0%" stopColor="#FAA51A" />
+                    <stop offset="100%" stopColor="#FFFFFF" />
                   </linearGradient>
                 </defs>
               </svg>
@@ -170,7 +170,7 @@ const HolographicDisplay = () => {
 
               {/* Central Hub */}
               <motion.div
-                className="absolute top-1/2 left-1/2 w-20 h-20 bg-gradient-to-r from-teal-500 to-purple-600 rounded-full flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2"
+                className="absolute top-1/2 left-1/2 w-20 h-20 bg-brandOrange rounded-full flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2"
                 animate={{
                   rotate: isAnimating ? 360 : 0,
                   scale: [1, 1.1, 1]
@@ -213,11 +213,11 @@ const HolographicDisplay = () => {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-slate-900/50 rounded-xl p-4">
                     <div className="text-sm text-gray-400 mb-1">Status</div>
-                    <div className="text-green-400 font-semibold">Active</div>
+                    <div className="text-brandOrange font-semibold">Active</div>
                   </div>
                   <div className="bg-slate-900/50 rounded-xl p-4">
                     <div className="text-sm text-gray-400 mb-1">Load</div>
-                    <div className="text-blue-400 font-semibold">67%</div>
+                    <div className="text-brandOrange font-semibold">67%</div>
                   </div>
                 </div>
 

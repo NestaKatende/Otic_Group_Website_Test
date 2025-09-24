@@ -61,8 +61,8 @@ const MediaShowcase = () => {
     <section className="py-20 bg-slate-800/50 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-brandOrange/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-brandOrange/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -72,12 +72,12 @@ const MediaShowcase = () => {
             whileInView={{ opacity: 1, y: 0 }}
             className="inline-flex items-center space-x-2 bg-slate-800/50 backdrop-blur-sm rounded-full px-6 py-2 border border-teal-500/20 mb-6"
           >
-            <ImageIcon className="w-4 h-4 text-teal-400" />
+            <ImageIcon className="w-4 h-4 text-brandOrange" />
             <span className="text-sm text-gray-300">Media Showcase</span>
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Experience Our <span className="bg-gradient-to-r from-teal-400 to-purple-500 bg-clip-text text-transparent">Impact</span>
+            Experience Our <span className="text-brandOrange">Impact</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Immerse yourself in the visual story of Africa's AI transformation
